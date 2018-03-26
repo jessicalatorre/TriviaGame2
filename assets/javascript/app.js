@@ -1,7 +1,7 @@
 var panel = $('#quiz-container');
 
 //try creating literal objects for each question using comma separated pairs and answer set within one large array
-var questions = [{
+var questionAnswerPairs = [{
     question:"1 - On average, how many aluminum soda cans are used in the United States each year?",
     answers: ["90 million", "80 billion", "120 million", "3 billion"],
     correctAnswer: "80 billion"
@@ -64,5 +64,22 @@ start: function () {
     //need to prepend H2 Time Remaining element with counter. 
 $('#quiz-container').prepend('<h2>Time Remaining: <span id="counter-number">60</span> Seconds </h2>');
 $('#start').remove();//remove start button when interval starts
+
+//create two for loops to run through your questionAnswerPairs array, so you can dynamically append the questions to the H2 element, and so you can add in radio buttons for each j index (answer set).
+for (var i = 0; i < questionAnswerPairs.length; i++) {
+    panel.append('<h2>' + questionAnswerPairs[i].question + '</h2>'); //
+)       for (var j = 0; j < questionAnswerPairs[i].answers.length; j++) {
+    panel.append('<input type="radio" name="question' + '-' + i + '" value="' + questionAnswerPairs[i].answers[j] + '">' + questionAnswerPairs[i].answers[j]);
+    }
 }
-  
+panel.append('<button id="done">Done</button>');
+done: function() {  
+        $.each($("input[name='questions-0']:checked"), function (){
+            if($(this).val() == questionAnswerPairs [0].correctAnswer) {
+                game.correct++;
+            } else {
+                game.incorrect++;
+            }
+        });
+};
+
