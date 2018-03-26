@@ -1,5 +1,6 @@
 var panel = $('#quiz-container');
 
+//try creating literal objects for each question using comma separated pairs and answer set within one large array
 var questions = [{
     question:"1 - On average, how many aluminum soda cans are used in the United States each year?",
     answers: ["90 million", "80 billion", "120 million", "3 billion"],
@@ -42,4 +43,26 @@ var questions = [{
     correctAnswer: "7 trees"
 }];
 
+//assign a variable and try creating an object with 
+var game = {
+    correct:0,
+    incorrect: 0,
+    counter:45,
+    countdown: 45,
+    countdown: function () {
+        game.counter--;
+        $('#counter-number').html(game.counter);
+
+    if (game.counter === 0){
+        console.log('TIME UP');
+        game.done();
+}
+    },
+start: function () {
+    timer = setInterval(game.countdown, 1000);
+
+    //need to prepend H2 Time Remaining element with counter. 
+$('#quiz-container').prepend('<h2>Time Remaining: <span id="counter-number">60</span> Seconds </h2>');
+$('#start').remove();//remove start button when interval starts
+}
   
