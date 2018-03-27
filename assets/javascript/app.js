@@ -1,6 +1,6 @@
 var panel = $('#quiz-container');
 
-$(document).on('click', '.btn', function (e) {
+$(document).on('click', '#btn', function (e) {
   game.start();
 });
 
@@ -77,7 +77,8 @@ var game = {
     for (var i = 0; i < questionAnswerPairs.length; i++) {
       panel.append('<h2>' + questionAnswerPairs[i].question + '</h2>'); //
       for (var j = 0; j < questionAnswerPairs[i].answers.length; j++) {
-        panel.append('<input type="radio" name="question' + '-' + i + '" value="' + questionAnswerPairs[i].answers[j] + '">' + questionAnswerPairs[i].answers[j]);
+        panel.append('<input type="radio" name="question' + '-' + i + '" value="' + 
+        questionAnswerPairs[i].answers[j] + '">' + questionAnswerPairs[i].answers[j]);
       }
     }
     // starting conditional statements for each question by looking at each object name. If a question is checked, the value of the answer will be compared with the specific index within the questionAnswerPair array and the correct paired object for the answer.
@@ -171,8 +172,10 @@ var game = {
 
       clearInterval(timer);
 
+      //Questoins begin repeating on page when I start positioning elements in CSS. Want to explore whether exiting loop will overcome this issue.
+
       $('#quiz-container h2').remove();
-      panel.html("<h2>Let's see how you did</h2>");
+      panel.html("<h3>Let's see how you did</h3>");
       panel.append('<h3>Correct Answers: ' + this.correct + '</h3>');
       panel.append('<h3>Incorrect Answers: ' + this.incorrect + '</h3>');
       panel.append('<h3>Unanswered: ' + (questionAnswerPairs.length - (this.incorrect + this.correct)) + '</h3>');

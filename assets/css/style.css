@@ -1,5 +1,54 @@
-.jumbotron {
-    color:darkgreen;
+body {
+    background-image: url("../images/waste-recycling.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+#header {
+    background-repeat: no-repeat;
+    height: 200px;
+    /* padding: 40px; */
+}
+
+button {
+    margin-left: 80px;
+    background-color: rgb(8, 57, 8);
+    color: rgb(89, 232, 89);
+    height: 50px;
+    width: 80px;
+
+}
+
+h1 {
+    color: rgb(12, 36, 12);
+    font-family: 'Cabin Sketch', cursive;
+    padding: 40px;
+    font-size: 80px;
+    text-align: center;
+    letter-spacing: 4px;
+    font-weight: 500;
+}
+
+h2 {
+    color:#051405;
+    font-size: 20px;
+    margin-left: 60px;
+}
+
+h3 {
+    margin-left: 40px;
+    /* position: relative;
+    bottom: 60px; */
+}
+p { 
+    width: 100%;
+}
+
+input[type="radio" i] {
+    font-size: 40px;
+    margin-left: 50px;
 }
 
 .btn {
@@ -10,6 +59,7 @@
 .btn-lg {
 color: white;
 background-color: #0a290a;
+font-weight: 500px;
 }
 
 
@@ -18,14 +68,12 @@ background-color: #0a290a;
     background-color: #0a290a;
 }
 
-h3 {
-    margin-left: 40px;
-    color:#051405;
-}
-
-
 .questionStyle {
     font-family: Arial, Helvetica, sans-serif;
     margin-left: 40px;
     font-size: 20px;
+}
+
+input[type=checkbox] {
+    font-size: 30px;
 }
